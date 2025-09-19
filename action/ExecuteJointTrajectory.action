@@ -1,0 +1,11 @@
+# Goal
+std_skills/Meta meta
+
+trajectory_msgs/JointTrajectory trajectory
+
+---
+# Result
+std_skills/Result result
+---
+# Feedback
+std_skills/Feedback feedback
