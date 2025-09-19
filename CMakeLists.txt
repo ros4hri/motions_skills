@@ -13,7 +13,7 @@
 # limitations under the License.
 
 cmake_minimum_required(VERSION 3.8)
-project(motion_skills)
+project(motions_skills)
 
 find_package(ament_cmake_auto REQUIRED)
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
