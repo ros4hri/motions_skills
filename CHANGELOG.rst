@@ -2,8 +2,8 @@
 Changelog for package motion_skills
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.1.0 (2025-09-19)
+------------------
 * motion_skills -> motions_skills
 * Contributors: Séverin Lemaignan
 
