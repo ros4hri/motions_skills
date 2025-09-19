@@ -2,6 +2,11 @@
 Changelog for package motion_skills
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* motion_skills -> motions_skills
+* Contributors: Séverin Lemaignan
+
 1.0.0 (2025-09-19)
 ------------------
 * add a 'safe_mode' flag
