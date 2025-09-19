@@ -1,7 +1,17 @@
 # Goal
 std_skills/Meta meta
 
+# The joint trajectory to execute.
+#
+# Depending on the implementation, the skill might only handle
+# position control, or additional velocity, acceleration and effort control.
 trajectory_msgs/JointTrajectory trajectory
+
+# Set to true (default) to use 'safe' execution. While the exact meaning of
+# 'safe' is implementation-defined, it generally means that the execution will
+# avoid unnecessary risks, e.g. by performing collision avoidance, moving more
+# slowly, etc.
+bool safe_mode true
 
 ---
 # Result
