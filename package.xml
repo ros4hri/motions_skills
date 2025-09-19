@@ -46,7 +46,17 @@
             description: |
               The joint trajectory to execute.
 
+              Depending on the implementation, the skill might only handle
+              position control, or additional velocity, acceleration and effort control.
+
               See :msg:`trajectory_msgs/msg/JointTrajectory` for details.
+          - name: safe_mode
+            type: boolean
+            default: true
+            description: |
+              If true, the robot will execute the trajectory in a safe mode.
+              The 'safe mode' is implementation-dependent, but typically means
+              collision avoidance, speed limits, etc.
           - name: meta.priority
             type: integer
             default: 128
