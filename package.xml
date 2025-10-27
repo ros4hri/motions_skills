@@ -15,6 +15,7 @@
   <depend>builtin_interfaces</depend>
   <depend>std_skills</depend>
   <depend>trajectory_msgs</depend>
+  <depend>moveit_msgs</depend>
 
   <exec_depend>rosidl_default_runtime</exec_depend>
 
@@ -57,6 +58,39 @@
               If true, the robot will execute the trajectory in a safe mode.
               The 'safe mode' is implementation-dependent, but typically means
               collision avoidance, speed limits, etc.
+          - name: meta.priority
+            type: integer
+            default: 128
+            description: Between 0 and 255. Higher means this skill request will be prioritized.
+    </skill>
+    <skill content-type="yaml">
+      id: execute_cartesian_trajectory
+      description: |
+        Execute a trajectory on the robot by specifying
+        a list of 3D points (and optionally, 3D orientations) to follow, with
+        corresponding target timestamps.
+
+        If a specific skill implementation uses a 3D motion planner, tHe exact
+        timestamps might vary based on the planner's output.
+
+        By not providing timestamps, the skill implementation can decide
+        on the timing based on its own constraints and capabilities.
+
+      interface: action
+      default_interface_path: /skill/execute_cartesian_trajectory
+      datatype: motion_skills/action/ExecuteCartesianTrajectory.action
+      functional_domains:
+        - motions
+      parameters:
+        in:
+          - name: trajectory
+            type: :msg:`moveit_msgs/msg/CartesianTrajectory`
+            required: true
+            description: |
+              The Cartesian trajectory to execute.
+
+              By setting the timestamps of each point to zero, the skill implementation
+              is free to decide on the timing based on its own constraints and capabilities.
           - name: meta.priority
             type: integer
             default: 128

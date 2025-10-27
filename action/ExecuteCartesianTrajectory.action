@@ -1,0 +1,12 @@
+# Goal
+std_skills/Meta meta
+
+# The Cartesian trajectory to execute.
+moveit_msgs/CartesianTrajectory trajectory
+
+---
+# Result
+std_skills/Result result
+---
+# Feedback
+std_skills/Feedback feedback

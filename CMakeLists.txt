@@ -25,7 +25,8 @@ ament_auto_find_build_dependencies()
 
 rosidl_generate_interfaces(${PROJECT_NAME}
   "action/ExecuteJointTrajectory.action"
-  DEPENDENCIES builtin_interfaces std_skills trajectory_msgs
+  "action/ExecuteCartesianTrajectory.action"
+  DEPENDENCIES builtin_interfaces std_skills trajectory_msgs moveit_msgs
 )
 
 ament_export_dependencies(rosidl_default_runtime)
