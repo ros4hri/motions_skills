@@ -2,8 +2,8 @@
 Changelog for package motion_skills
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.2.0 (2025-10-27)
+------------------
 * add definition of execute_cartesian_trajectory skill
 * Contributors: Séverin Lemaignan
 
