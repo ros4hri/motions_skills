@@ -30,6 +30,7 @@
 
     <skill content-type="yaml">
       id: execute_joint_trajectory
+      version: 1.0.0
       description: |
         Execute a joint trajectory on the robot by specifying
         a list of joint positions and timestamps.
@@ -65,6 +66,7 @@
     </skill>
     <skill content-type="yaml">
       id: execute_cartesian_trajectory
+      version: 1.0.0
       description: |
         Execute a trajectory on the robot by specifying
         a list of 3D points (and optionally, 3D orientations) to follow, with
