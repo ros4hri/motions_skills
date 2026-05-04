@@ -29,41 +29,6 @@
     <build_type>ament_cmake</build_type>
 
     <skill content-type="yaml">
-      id: replay_motion
-      version: 1.0.0
-      description: |
-        Replay a pre-recorded motion. Can be used, for instance, to perform
-        prerecorded gestures, or going to preset postures.
-
-        Calling this skill with an empty motion name returns the list of available motions.
-
-      interface: action
-      default_interface_path: /skill/replay_motion
-      datatype: motion_skills/action/ReplayMotion.action
-      functional_domains:
-        - motions
-      parameters:
-        in:
-          - name: name
-            type: string
-            description: |
-              The name of the motion to execute.
-
-              If empty or invalid, the action should return immediately, with a list of
-              supported motions.
-          - name: unsafe
-            type: bool
-            default: false
-            description: |
-              If `true`, skip collision checks. If `false` (default), the skill implementation
-              is expected to ensure that the motion execution is safe (for instance, it does not generate
-              collisions).
-          - name: meta.priority
-            type: integer
-            default: 128
-            description: Between 0 and 255. Higher means this skill request will be prioritized.
-    </skill>
-    <skill content-type="yaml">
       id: execute_joint_trajectory
       version: 1.0.0
       description: |
@@ -133,6 +98,56 @@
             default: 128
             description: Between 0 and 255. Higher means this skill request will be prioritized.
     </skill>
+    <skill content-type="yaml">
+      id: replay_motion
+      version: 1.1.0
+      description: |
+        Execute a pre-recorded motion. Can be used, for instance, to perform
+        prerecorded gestures, or going to preset postures.
+
+      interface: action
+      default_interface_path: /skill/replay_motion
+      datatype: motion_skills/action/ReplayMotion.action
+      functional_domains:
+        - motions
+      parameters:
+        in:
+          - name: name
+            type: :msg:`std_msgs/msg/String`
+            required: true
+            description: |
+              The name of the motion to execute. The name must be one of the names returned by the skill list_motions.
+          - name: unsafe
+            type: bool
+            default: false
+            description: |
+              If `true`, skip collision checks. If `false` (default), the skill implementation
+              is expected to ensure that the motion execution is safe (for instance, it does not generate
+              collisions).
+          - name: meta.priority
+            type: integer
+            default: 128
+            description: Between 0 and 255. Higher means this skill request will be prioritized.
+    </skill>
+    <skill content-type="yaml">
+      id: list_motions
+      version: 1.0.0
+      description: |
+        List the available pre-recorded motions that can be executed with the replay_motion skill.
+
+      interface: service
+      default_interface_path: /skill/list_motions
+      datatype: motion_skills/action/ListMotions.srv
+      functional_domains:
+        - motions
+      parameters:
+        in: []
+        out:
+          - name: motions
+            type: array of string
+            description: The list of available motion names that can be executed with the replay_motion skill.
+    </skill>
+
 
   </export>
 </package>

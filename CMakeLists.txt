@@ -26,6 +26,8 @@ ament_auto_find_build_dependencies()
 rosidl_generate_interfaces(${PROJECT_NAME}
   "action/ExecuteJointTrajectory.action"
   "action/ExecuteCartesianTrajectory.action"
+  "action/ReplayMotion.action"
+  "srv/ListMotions.srv"
   DEPENDENCIES builtin_interfaces std_skills trajectory_msgs moveit_msgs
 )
 

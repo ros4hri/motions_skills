@@ -8,16 +8,13 @@ std_skills/Meta meta
 string name
 
 # if true, do not run motion planning before executing the motion
-# -> might lead to collision!
+# -> might lead to eg collision
 bool unsafe
 
 ---
 # Result
 std_skills/Result result
 
-# if 'name' is empty or invalid, the action should return immediately
-# with the list of 'available_motions'.
-string[] available_motions
 ---
 # Feedback
 std_skills/Feedback feedback

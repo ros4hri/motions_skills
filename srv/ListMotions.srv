@@ -1,0 +1,9 @@
+# Goal
+std_skills/Meta meta
+
+---
+# Result
+std_skills/Result result
+
+# the list of motions known to the robot, that can be replayed with the replay_motion skill.
+string[] motions
